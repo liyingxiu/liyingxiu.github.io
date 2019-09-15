@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        自适应图片测试
+    </title>
+    <body>
+        <picture>
+            <img srcset="images/scenery.jpg 320w
+                         images/scenery.jpg 480w
+                         images/scenery.jpg 800w"
+                 sizes="(max-width:320px) 280px,
+                        (max-width:480px) 440px
+                        800px"
+            src="images/scenery.jpg" alt="beautiful scenery">
+        </picture>
+    </body>
+</html>

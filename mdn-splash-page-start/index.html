@@ -101,23 +101,53 @@
 
       <div class="further-info">
         <!-- insert images with srcsets and sizes -->
+        <!--<img srcset="elva-fairy-320w.jpg 320w,
+                        elva-fairy-480w.jpg 480w,
+                        elva-fairy-800w.jpg 800w"
+                  sizes="(max-width: 320px) 280px,
+                        (max-width: 480px) 440px,
+                        800px"
+                  src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">-->
         <a href="https://www.mozilla.org/en-US/firefox/new/">
-          <img>
+          <img srcset="originals/firefox_logo-only_RGB120px.png 120px,
+                      originals/firefox_logo-only_RGB400px.png 400px"
+                sizes="(max-width:480px) 120px,
+                      400px"
+          src="originals/firefox_logo-only_RGB.png" alt="firefox-logo">
         </a>
         <a href="https://www.mozilla.org/">
-          <img>
+          <img srcset="originals/mozilla-dinosaur-head120px.jpg 120px,
+                      originals/mozilla-dinosaur-head400px.jpg 400px"
+                sizes="(max-width:480px) 120px,
+                      400px"
+          src="originals/mozilla-dinosaur-head.png" alt="dinosaur-head">
         </a>
         <a href="https://addons.mozilla.org/">
-          <img>
+          <img srcset="originals/firefox-addons120px.jpg 120px,
+                      originals/firefox-addons400px.jpg 400px"
+                sizes="(max-width:480px) 120px,
+                      400px"
+          src="originals/firefox-addons.jpg" alt="firefox-addons">
         </a>
         <a href="https://developer.mozilla.org/en-US/">
-          <img>
+          <img srcset="originals/firefox_logo-only_RGB120px.png 120px,
+                      originals/firefox_logo-only_RGB400px.png 400px"
+                sizes="(max-width:480px) 120px,
+                      400px"
+          src="originals/firefox_logo-only_RGB.png" alt="firefox-logo">
         </a>
         <div class="clearfix"></div>
       </div>
 
       <div class="red-panda">
         <!-- insert picture element -->
+        <!--  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+              <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+              <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">-->
+        <picture>
+          <source media="(max-width: 600px)" srcset="originals/red-panda600px.jpg">
+          <img src="originals/red-panda1200px.jpg" alt="red-panda">
+        </picture>
       </div>
 
     </main>

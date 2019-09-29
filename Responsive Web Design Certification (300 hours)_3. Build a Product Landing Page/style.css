@@ -1,0 +1,44 @@
+
+#nav-bar {
+    display: inline-block;
+    position: fixed;
+    right: 5%;
+}
+
+#nav-bar ul li{
+    list-style-type: none;
+    display: inline;
+}
+
+a{
+    text-decoration: none;
+}
+
+#iframe,#form,h2{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#box1, #box2, #box3{
+    border: dotted 3px;
+    background-color: blanchedalmond;
+    width: 300px;
+}
+
+#introduction{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+

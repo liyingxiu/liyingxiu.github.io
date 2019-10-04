@@ -1,0 +1,14 @@
+@media screen and (max-width: 300px) {
+    body {
+        background-color:aliceblue;
+    }
+}
+
+nav{
+    position: absolute;
+    margin: 0px 300px 0px 0px;
+}
+main{
+    position: fixed;
+    margin: 0px 0px 0px 270px
+}

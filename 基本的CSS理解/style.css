@@ -1,0 +1,66 @@
+/* 整体页面的一般样式 */
+body {
+    margin: 0;
+  }
+  
+  html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 10px;
+    background-color: #ccc;
+  }
+
+  .card{
+    /* width: 35em;
+    height: 22em; */
+    width: 350px;
+    height: 220px;
+    margin: 5em auto;
+    background-color: red;
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+  }
+
+  .card header{
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
+    border-radius: 1.5em 1.5em 0 0;
+    padding: 1em;
+    line-height: 3em;
+  }
+
+  .card footer{
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
+    border-radius: 0 0 1.5em 1.5em;
+    padding: 1em;
+    line-height: 3em;
+  }
+
+  .card article img{
+    /* max-height: 100%; */
+    height: 120px;
+    float: right;
+  }
+
+  h2,p{
+      margin: 0;
+  }
+  h2{
+    font-size: 2em;
+  }
+
+  .card article{
+    height: 12em;
+    background-color: rgba(129, 73, 71, 0.932);
+    line-height: 1.7em;
+  }
+
+  .card article p{
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .card footer p{
+    font-size: 1.5em;
+
+  }
+  

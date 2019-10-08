@@ -1,0 +1,96 @@
+/* General setup */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+    font-size: 10px;
+    line-height: 3em;
+    letter-spacing: 0.02em;
+    word-spacing: 0.1em;
+  }
+  
+  /* Layout */
+  
+  section {
+    float: left;
+    width: 50%;
+    font-size: 1.5em;
+  }
+  
+  aside {
+    float: left;
+    width: 30%;
+    font-size: 1.5em;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+    font-size: 1.5em;
+  }
+  
+  footer {
+    clear: both;
+    font-size: 1.5em;
+  }
+  
+  header, section, aside, nav, footer {
+    padding: 20px;
+    font-size: 1.5em;
+  }
+  
+  /* header and footer */
+  
+  header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+  }
+  
+  /* WRITE YOUR CODE BELOW HERE */
+
+  h1, h2{
+      text-align: center;
+      letter-spacing:0.05em;
+  }
+
+   section p:first-of-type{
+      text-indent: 2em;
+  }
+
+  love fears hate
+
+  a:link{
+      
+      color:white;
+  }
+
+  a:visited{
+      color: aqua
+  }
+
+  a:focus{
+      color:rebeccapurple;
+      text-decoration: none;
+      border-style: none;
+
+  }
+
+  a:hover{
+      color:black; 
+      text-decoration: none;
+  }
+
+  ul li a{
+      background: url(external-link-52.png) no-repeat 100% 0;
+      background-size: 16px 16px;
+      padding-right: 19px;
+  }
+
+  ul{
+      line-height: 3em;
+  }

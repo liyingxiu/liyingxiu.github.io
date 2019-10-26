@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What
+            are browser developer tools</a> for more information).</p>
+
+</body>
+
+<script>
+    // 创建一个新的空对象并且返回它
+    // function createNewPerson(name) {
+    //     var obj = {};
+    //     obj.name = name;
+    //     obj.greeting = function () {
+    //         alert('Hi! I\'m ' + this.name + '.');
+    //     }
+    //     return obj;
+    // }
+
+    // JavaScript 通过构建函数提供了一个便捷的方法
+    // function Person(name) {
+    //     this.name = name;
+    //     this.greeting = function () {
+    //         alert('Hi! I\'m ' + this.name + '.');
+    //     };
+    // }
+
+    // 关键字 new 跟着一个含参函数，用于告知浏览器我们想要创建一个对象
+    // var person1 = new Person('Bob');
+    // var person2 = new Person('Sarah');
+
+
+    // 将上述代码全部注释掉，用如下构造函数替代。
+    // 实现原理上，这与我们之前的例子并无二致， 只是变得稍稍复杂了些：
+    // 使用构造函数构造对象，之前是直接声明一个对象。
+    function Person(first, last, age, gender, interests) {
+        this.name = {
+            'first': first,
+            'last': last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.bio = function () {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        };
+        this.greeting = function () {
+            alert('Hi! I\'m ' + this.name.first + '.');
+        };
+    };
+
+    var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+
+
+</script>
+
+</html>

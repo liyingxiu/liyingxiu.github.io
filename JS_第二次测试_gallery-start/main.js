@@ -24,10 +24,12 @@ for (var i = 1; i <= 5; i++) {
 btn.onclick = function(){
     if(btn.getAttribute("class")==="dark"){
         btn.setAttribute("class", "light");
+        btn.textContent = "变亮";
         overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
     }
     else{
         btn.setAttribute("class", "dark");
+        btn.textContent = "变暗";
         overlay.style.backgroundColor = "rgba(0,0,0,0)";
     }
 }

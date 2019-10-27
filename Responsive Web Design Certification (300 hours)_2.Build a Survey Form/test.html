@@ -1,43 +1,55 @@
 <!DOCTYPE html5>
+
 <head>
     <meta charset="UTF-8">
     <title>Survey Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1 id="title">Survey Form</h1>
     <div id="table">
-    <p id="description">Let us know how we can improve freeCodeCamp</p>
-    <form id="survey-form" action="https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text=hint">
-        <label id="name-label" for="name">*Name:</label> 
-        <input id="name" type="text" name="name" placeholder="Enter your name" required>
-        <br>
-        <label id="email-label" for="email">*Email:</label>
-        <input id="email" type="email" name="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-        <br>
-        <label id="number-label" for="age">*Age:</label>
-        <input id="number" type="number" name="age" placeholder="Age" required min="0" max="200">
-        <br>
-        Which option best describes your current role?
-        <select name="joblist" id="dropdown">
-            <option value="Student">Student</option>
-            <option value="Teacher">Teacher</option>
-        </select>
-        <br>
-        How likely is that you would recommend freeCodeCamp to a friend?
-        <input type="radio" name="possibility" value="Definitely" >Definitely
-        <input type="radio" name="possibility" value="May be" >May be
-        <input type="radio" name="possibility" value="Not Sure" checked>Not Sure   
-        <br>
-        Things that should be improved in the future
-        <br>(Check all that apply):
-        <input type="checkbox" name="thing1" value="Front-end Projects">Front-end Projects
-        <input type="checkbox" name="thing2" value="Back-end Projects">Back-end Projects
-        <br>
-        Any Comments or Suggestions?
-        <textarea name="additional" id="Comments" cols="30" rows="5" placeholder="Enter your comments here"></textarea>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-</div>
+        <p id="description">Let us know how we can improve freeCodeCamp</p>
+        <form id="survey-form" action="https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text=hint">
+            <div class="row">
+                <label id="name-label" for="name">*Name:</label>
+                <input id="name" type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="row">
+                <label id="email-label" for="email">*Email:</label>
+                <input id="email" type="email" name="email" placeholder="Enter your email" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            </div>
+            <div class="row">
+                <label id="number-label" for="age">*Age:</label>
+                <input id="number" type="number" name="age" placeholder="Age" required min="0" max="200">
+            </div>
+            <div class="row">
+                <label for="joblist">Which option best describes your current role?</label>
+                <select name="joblist" id="dropdown">
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="possibility">How likely is that you would recommend freeCodeCamp to a friend?</label>
+                <input type="radio" name="possibility" value="Definitely">Definitely
+
+                <input type="radio" name="possibility" value="May be">May be
+                <input type="radio" name="possibility" value="Not Sure" checked>Not Sure
+            </div>
+            <div class="row">
+                <label for="thing1">Things that should be improved in the future</label>
+                <br>(Check all that apply):
+                <input type="checkbox" name="thing1" value="Front-end Projects">Front-end Projects
+                <input type="checkbox" name="thing2" value="Back-end Projects">Back-end Projects
+            </div>
+            <div class="row">
+                <label for="additional">Any Comments or Suggestions?</label>
+                <textarea name="additional" id="Comments" cols="30" rows="5"
+                    placeholder="Enter your comments here"></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>

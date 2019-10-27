@@ -4,12 +4,18 @@ h1,#description{
 #Comments{
     border-color: blue;
 }
+body{
+    text-align: center;
+}
 html{
-    background-color: aquamarine;
+    background-color:#a9d7d1;
 }
 #table{
-    background-color: azure;
-    margin: 20px 30% 20px 20%;
+    background-color:rgb(250, 250, 250);
+    /* margin: 20px 10% 20px 10%; */
+    border-radius: 5px;
+    width: 75%;
+    margin: 0 auto;
 }
 
 form{
@@ -17,4 +23,13 @@ form{
 }
 input{
     margin: flex;
+}
+
+label{
+    text-align: right;
+    margin-top: 5px;
+}
+.row {
+    padding: 5px;
+    margin-top: 10px;
 }

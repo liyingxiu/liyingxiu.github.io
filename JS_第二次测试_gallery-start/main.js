@@ -6,12 +6,15 @@ const overlay = document.querySelector('.overlay');
 
 /* 遍历图片并添加至缩略图区 */
 
-for (let i = 1; i <= 5; i++) {
+for (var i = 1; i <= 5; i++) {
     // 显示一排小照片
     const newImage = document.createElement('img');
     newImage.setAttribute('src', 'images/pic' + i + '.jpg')
-    newImage.onclick = function(){
-        displayedImage.setAttribute("src", 'images/pic' + i + '.jpg');   
+    newImage.onclick = function(mouseEvent){
+        // console.log(mouseEvent)
+        // displayedImage.setAttribute("src", 'images/pic' + i + '.jpg');
+        let newSrc = mouseEvent.target.getAttribute("src");
+        displayedImage.setAttribute("src", newSrc);   
     }
     thumbBar.appendChild(newImage);
 }

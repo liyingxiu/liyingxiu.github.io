@@ -1,0 +1,111 @@
+body, html{
+    margin: 0;
+    height: 100%;
+}
+
+/* 欢迎页面 */
+#welcome-section{
+    height:100%;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+    /* padding-top: 90px; */   
+}
+
+#main-title h1{
+    font-size: 50px;
+    color: white;
+}
+
+#sub-title{
+    font-size: 40px;
+    color: tomato;
+}
+
+#title-wrapper{
+    text-align: center;
+    padding-top: 25%;
+}
+
+/* 导航栏 */
+
+#navbar{
+    background-color: brown;
+    height: 90px;
+    width: 100%;
+    margin: 0 auto;
+    position:fixed ;
+    z-index: 1786786786;
+}
+
+#menus{
+   height: 100%;
+   float: right;
+   align-items: center;
+   padding-right: 20px;
+}
+
+.menu{
+    float: left;
+    width: 100px;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 90px;
+    color: white;
+}
+
+.menu:hover{
+    background-color: rgb(158, 171, 197);
+}
+
+/* 项目简介 */
+
+
+.project-tile{
+    width: 400px;
+    display: inline-block;
+}
+img {
+    margin: 0 auto;
+    display: block;
+}
+
+.row-project{
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.project-tile div{
+    text-align: center;
+    background-color:green;
+    width: 350px;
+    margin: 0 auto;
+    height: 60px;
+    line-height: 60px;
+}
+
+#projects{
+    background-color: indianred;
+}
+
+#project-main-title{
+    padding-top: 40px;
+    font-size: 50px;
+    /* border-bottom: ivory solid; */
+    color: ivory;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+
+.project-tile .sometimes {
+    color: green;
+    transition: all 2s;
+}
+
+.project-tile:hover .sometimes {
+    color: orange;
+    transition: all 2s;
+}
+

@@ -98,7 +98,7 @@ img {
     padding-bottom: 60px;
 }
 
-
+/* 加特效的部分 */
 .project-tile .sometimes {
     color: green;
     transition: all 2s;

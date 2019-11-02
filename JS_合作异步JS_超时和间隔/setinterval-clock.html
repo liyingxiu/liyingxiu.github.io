@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple setInterval clock</title>
+    <style>
+        p {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="clock"></p>
+    <button id="start">
+        Start
+    </button>
+    <button id="stop">
+        Stop
+    </button>
+    <button id="reset">
+        Reset
+    </button>
+    <script>
+
+        // 获取html中的三个按键的引用
+        let startbtn = document.getElementById("start");
+        let stopbtn = document.getElementById("stop");
+        let resetbtn = document.getElementById("reset");
+
+        // 让时间一秒刷新一次
+        function displayTime() {
+            let date = new Date();
+            let time = date.toLocaleTimeString();
+            document.querySelector('.clock').textContent = time;
+        }
+        displayTime();
+        const createClock = setInterval(displayTime, 1000);
+
+        // 创建一个变量，从0开始，每秒钟增加1
+        function increaseself() {
+            let i = 0;
+            i++;
+        }
+        const newtime = setInterval(increaseself, 1000);
+    </script>
+</body>
+
+</html>

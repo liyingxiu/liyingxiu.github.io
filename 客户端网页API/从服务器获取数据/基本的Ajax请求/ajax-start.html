@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Ajax starting point</title>
+
+    <style>
+        html,
+        pre {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 500px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+
+        pre {
+            line-height: 1.5;
+            letter-spacing: 0.05rem;
+            padding: 1rem;
+            background-color: white;
+        }
+
+        label {
+            width: 200px;
+            margin-right: 33px;
+        }
+
+        select {
+            width: 350px;
+            padding: 5px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <h1>Ajax starting point</h1>
+
+    <form>
+        <label for="verse-choose">Choose a verse</label>
+        <select id="verse-choose" name="verse-choose">
+            <option>Verse 1</option>
+            <option>Verse 2</option>
+            <option>Verse 3</option>
+            <option>Verse 4</option>
+        </select>
+    </form>
+
+    <h2>The Conqueror Worm, <em>Edgar Allen Poe, 1843</em></h2>
+
+    <pre>
+
+    </pre>
+
+    <script>
+        function updateDisplay(verse) {
+            // 将“Verse 1”转换为“verse1.txt”
+            verse = verse.replace(" ", "");
+            verse = verse.toLowerCase();
+            var url = verse + '.txt';
+
+            var request = new XMLHttpRequest();
+            // 使用 open() 方法来指定用于从网络请求资源的 HTTP request method , 以及它的URL是什么
+            request.open('GET', url);
+            // 设置我们期待的响应类型(以后可以获取如json等其他类型的数据)
+            request.responseType = 'text';
+            // 因为是异步，所以需要使用onload来处理
+            request.onload = function () {
+                // 下面这句话没看懂是真的，应该是在异步那边。
+                poemDisplay.textContent = request.response;
+            }
+            // 以上都是XHR请求的设置 — 在我们告诉它之前，它不会真正运行，这是通过 send() 完成的.
+            request.send();
+        };
+
+        var verseChoose = document.querySelector('select');
+        var poemDisplay = document.querySelector('pre');
+
+        verseChoose.onchange = function () {
+            var verse = verseChoose.value;
+            updateDisplay(verse);
+        };
+        updateDisplay('Verse 1');
+        verseChoose.value = 'Verse 1';
+    </script>
+</body>
+
+</html>

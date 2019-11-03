@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+    <style>
+        .highlight {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="dinosaur.png"
+            alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+    </section>
+    <script>
+        var link = document.querySelector('a');
+        // 更新 Node.textContent属性的值来修改链接中的文字
+        link.textContent = 'Mozilla Developer Network';
+        // 修改链接指向的URL
+        link.href = 'https://developer.mozilla.org';
+        var sect = document.querySelector("section");
+        var para = document.createElement('p');
+        para.textContent = 'We hope you enjoyed the ride.';
+        sect.appendChild(para);
+        var text = document.createTextNode(' — the premier source for web development knowledge.');
+        var linkpara = document.querySelector('p');
+        linkpara.appendChild(text);
+        sect.appendChild(linkpara);
+        // 删除一个节点
+        sect.removeChild(linkpara);
+        // 要删除一个仅基于自身引用的节点的操作方法：
+        linkPara.parentNode.removeChild(linkPara);
+
+        // 设置一个对象的属性来直接对样式进行修改
+        // para.style.color = 'white';
+        // para.style.backgroundColor = 'black';
+        // para.style.padding = '10px';
+        // para.style.width = '250px';
+        // para.style.textAlign = 'center';
+        para.setAttribute('class', 'highlight');
+    </script>
+</body>
+
+</html>

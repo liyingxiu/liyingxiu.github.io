@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="myCanvas">
+        <p>Add suitable fallback here.</p>
+    </canvas>
+
+    <script>
+        var canvas = document.querySelector('.myCanvas');
+        var width = canvas.width = window.innerWidth;
+        var height = canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'rgb(0,0,0)';
+        ctx.fillRect(0, 0, width, height);
+
+        //插入图片
+        var image = new Image();
+        image.src = 'firefox.png';
+
+        //应确保图片先载入完毕，否则运行会出错。
+        //可以通过 onload 事件处理器来达成，该函数只在图片调用完毕后才会调用。
+        image.onload = function () {
+            ctx.drawImage(image, 50, 50);
+            //如果要对图片的大小调整，用如下的函数，参数含义自己查
+            // ctx.drawImage(image, 20, 20, 185, 175, 50, 50, 185, 175);
+        }
+    </script>
+</body>
+
+</html>

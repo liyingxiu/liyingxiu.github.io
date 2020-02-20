@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .default{
+            border-radius: 5px;
+        }
+        .primary{
+            color: cornflowerblue;
+            background-color: darkgrey;
+        }
+        .success{
+            color: darksalmon;
+            background-color: dimgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        //全局组件的创建，创建后即声明，不需要再去挂载
+        //第一个参数是组件的名字，第二个是options
+        Vue.component('Vbtn',{
+            template:`
+            <button class="default" :class="type">
+                <slot></slot>
+            </button>`,
+            props:['type']
+        });
+
+        //注意使用template的时候，有且只能有一个根结点，div
+        var Vheader = {
+            template:`
+                <div>头部组件</div>
+            `,
+        }
+
+        var Vside = {
+            template:`
+                <div>侧边栏</div>
+            `
+        }
+        var VContent = {
+            template:`
+                <div>
+                    内容组件
+                    <Vbtn type="primary">主要按钮</Vbtn>
+                    <Vbtn type="success">成功按钮</Vbtn>
+                </div>
+            `
+        }
+
+        //1.首先声明一个子组件
+        var App = {
+            template:`
+                <div>
+                    <Vheader></Vheader>
+                    <Vside></Vside>
+                    <VContent></VContent>
+                    </div>
+                </div>
+            `,
+            components:{
+                Vheader,
+                Vside,
+                VContent
+            }
+        }
+
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+
+                }
+            },
+            //2.挂载子组件
+            components:{
+                App
+            },
+            //3.使用子组件
+            template:`<App></App>`
+    })
+
+    </script>
+</body>
+
+</html>

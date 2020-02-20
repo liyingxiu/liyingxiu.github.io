@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        //通信的步骤
+        //1.先给父组件中绑定自定义的属性childDate
+        //2.在子组件中使用props接收父组件传递的数据
+        //3.在子组件中任意使用
+
+        //父组件
+        Vue.component("Parent",{
+            data(){
+                return{
+                    msg:"父组件的数据"
+                }
+            },
+            template:`
+            <div>
+                <p>父组件</p>
+                <Child v-bind:childDate="msg"></Child>
+            </div>`
+        })
+
+        //子组件
+        Vue.component("Child",{
+            template:`
+            <div>
+                <p>子组件</p>
+                <p>{{childDate}}</p>
+                <input type="text" v-model='childDate'></input>
+            </div>`,
+            props:['childDate']
+        })
+
+        
+
+        //App组件
+        var App = {
+            template:`
+                <div>
+                    <Parent></Parent>
+                </div>
+            `,
+            components:{
+
+            }
+        }
+
+        //root
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+
+                }
+            },
+            //2.挂载
+            components:{
+                App
+            },
+            //3.使用
+            template:`<App></App>`
+    })
+
+    </script>
+</body>
+
+</html>

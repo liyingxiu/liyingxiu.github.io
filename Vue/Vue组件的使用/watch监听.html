@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='msg'>
+        <h3>{{msg}}</h3>
+        <button @click='stus[0].name="rose"'></button>
+        <h4>{{stus[0].Jack}}</h4>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+        
+        //watch监听的是单个属性，基本的数据类型可以简单监视，复杂的数据类型需要深度监视
+
+        new Vue({
+            el:"#app",
+            data(){
+                return{
+                    msg:'',
+                    //监听数组是不行的，地址会变
+                    stus:[{name:'Jack'}]
+                }
+            },
+            watch:{
+                msg:function(newV,oldV){
+                    console.log(newV, oldV);
+
+                    if(newV==="qwer"){
+                        console.log("yes");
+                    }
+                }
+            },
+            //监听复杂数据类型，比如object或者array，需要深度监视
+            stus:{
+                deep:true,//深度监视
+                handler:function(newV,oldV){
+                    console.log(newV,oldV);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

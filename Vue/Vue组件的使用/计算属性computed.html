@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            margin: 10px;
+            padding: 10px 5px;
+            border-radius: 3px;
+            background-color: rgb(234,123,204);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <p>{{getCurrentAge}}</p>
+            <!-- 注意这个地方是写的key而不是value，看new Vue中数据的返回值 -->
+            <li v-for='(item,index) in hereList' @click="clickHandler(index)">
+                <h2>{{item.id}}--名字{{item.name}}</h2>
+                <p>年龄：{{item.age}}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+        let myList = [
+            {id:1,name:'A',age:12},
+            {id:2,name:'B',age:13},
+            {id:3,name:'C',age:14},
+            {id:4,name:'D',age:15},
+        ];
+
+        new Vue({
+            el:'#app',
+            data(){
+                return {
+                    hereList:myList,
+                    currentIndex:0
+                }
+            },
+            computed:{
+                //计算属性默认只有getter
+                getCurrentAge:function(){
+                    //同时监听了hereList和currentIndex两个数据属性
+                    return this.hereList[this.currentIndex].age;
+                }
+            },
+            methods:{
+                clickHandler(index){
+                    //点击事件之后，会触发clickHandler函数，把当前的index传递过来了，
+                    //这边的index一旦被修改，则会被computed监听到
+                    this.currentIndex = index;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

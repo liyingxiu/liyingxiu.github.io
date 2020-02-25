@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <script>
+        var Home = {
+            template: `
+                <div>
+                    首页内容
+                    <br>
+                    <router-link to="/home/song">music</router-link>
+                    <router-link to="/home/movie">movie</router-link>
+
+                    <router-view></router-view>
+                </div>
+            `
+        };
+
+        var Song = {
+            template:`<div>我是音乐</div>`
+        }
+
+        var Movie = {
+            template:`<div>我是电影</div>`
+        }
+
+
+        var router = new VueRouter({
+            routes: [
+                {   //动态路由参数 以冒号开头
+                    path: "/home",
+                    name:'home',
+                    component: Home,
+                    children:[
+                        {
+                            path:'song',
+                            component:Song
+                        },
+                        {
+                            path:'movie',
+                            component:Movie
+                        }
+                    ]
+                },
+            ]
+        });
+
+        var App = {
+            template: `
+            <div>
+                <router-link :to="{name:'home'}">首页</router-link>
+                <router-view></router-view>
+            </div>
+            `
+        }
+
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+
+                }
+            },
+            components: {
+                App,
+            },
+            router: router,
+            template: `<App></App>`
+        })
+    </script>
+</body>
+
+</html>
